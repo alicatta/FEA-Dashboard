@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Available FEA Models</h2>
+<ul>
+    {% for model in models %}
+        <li><a href="{{ url_for('main.model_overview', model_name=model.name) }}">{{ model.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>{{ model_name }} Overview</h2>
+<ul>
+    {% for location in locations %}
+        <li><a href="{{ url_for('main.model_detail', model_name=model_name, location_name=location) }}">{{ location }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

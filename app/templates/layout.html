@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEA Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>FEA Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('main.upload_file') }}">Upload Data</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="search-section">
+            <form action="{{ url_for('main.search') }}" method="post">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+</body>
+</html>

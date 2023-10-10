@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Upload FEA Model Data</h2>
+<form action="{{ url_for('main.upload_file') }}" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.model_name.label }}: {{ form.model_name }}<br>
+    {{ form.file.label }}: {{ form.file }}<br>
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}
